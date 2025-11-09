@@ -3,1176 +3,428 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogeeta Sharma - Content Writer Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #f8fafc;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
-            min-height: 100vh;
-        }
-
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 280px;
-            height: 100vh;
-            background: linear-gradient(180deg, #1e293b 0%, #334155 100%);
-            z-index: 1000;
-            transition: transform 0.3s ease;
-            overflow-y: auto;
-        }
-
-        .sidebar.mobile-hidden {
-            transform: translateX(-100%);
-        }
-
-        .profile-section {
-            text-align: center;
-            padding: 40px 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: white;
-            font-weight: 600;
-            margin: 0 auto 20px;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-photo:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-name {
-            color: white;
-            font-size: 1.4em;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .profile-title {
-            color: #94a3b8;
-            font-size: 0.95em;
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            color: #cbd5e1;
-            font-size: 0.85em;
-            line-height: 1.8;
-        }
-
-        .contact-info a {
-            color: #60a5fa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: #3b82f6;
-        }
-
-        .nav-menu {
-            padding: 20px 0;
-        }
-
-        .nav-item {
-            display: block;
-            width: 100%;
-            padding: 15px 30px;
-            background: none;
-            border: none;
-            color: #cbd5e1;
-            text-align: left;
-            font-size: 0.95em;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-            position: relative;
-        }
-
-        .nav-item:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            border-left-color: #3b82f6;
-        }
-
-        .nav-item.active {
-            background: rgba(59, 130, 246, 0.1);
-            color: white;
-            border-left-color: #3b82f6;
-        }
-
-        .main-content {
-            margin-left: 280px;
-            min-height: 100vh;
-            padding: 40px 50px;
-            background: white;
-        }
-
-        .mobile-header {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: #1e293b;
-            color: white;
-            padding: 15px 20px;
-            z-index: 1001;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .mobile-toggle {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .section {
-            display: none;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-
-        .section-title {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            color: #64748b;
-            font-size: 1.1em;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            border-radius: 16px;
-            margin-bottom: 50px;
-        }
-
-        .hero-title {
-            font-size: 3em;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 20px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3em;
-            color: #475569;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #3b82f6;
-            padding: 14px 28px;
-            border: 2px solid #3b82f6;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .experience-timeline {
-            position: relative;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e2e8f0;
-        }
-
-        .experience-item {
-            position: relative;
-            margin-left: 60px;
-            margin-bottom: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -48px;
-            top: 30px;
-            width: 16px;
-            height: 16px;
-            background: #3b82f6;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 2px #e2e8f0;
-        }
-
-        .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .job-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .company {
-            color: #3b82f6;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .date {
-            color: #64748b;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-
-        .experience-description {
-            color: #475569;
-            line-height: 1.7;
-        }
-
-        .experience-description ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .experience-description li {
-            margin-bottom: 8px;
-        }
-
-        .education-grid {
-            display: grid;
-            gap: 30px;
-        }
-
-        .education-item {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .degree {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 8px;
-        }
-
-        .institution {
-            color: #3b82f6;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .articles-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        .article-card {
-            background: white;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .article-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .article-header {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            padding: 20px;
-        }
-
-        .article-category {
-            background: #3b82f6;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: 500;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .article-title {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-
-        .article-content {
-            padding: 20px;
-        }
-
-        .article-description {
-            color: #64748b;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .article-link {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.3s ease;
-        }
-
-        .article-link:hover {
-            color: #1d4ed8;
-        }
-
-        .publication-item {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
-        }
-
-        .publication-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .publication-title {
-            font-size: 1.3em;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 10px;
-        }
-
-        .journal {
-            color: #3b82f6;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .abstract {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            line-height: 1.7;
-            border-left: 4px solid #3b82f6;
-            color: #475569;
-        }
-
-        .publication-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .pub-link {
-            background: #3b82f6;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .pub-link:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        .skills-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .skills-chart {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .skills-chart h3 {
-            color: #1e293b;
-            margin-bottom: 25px;
-            font-size: 1.3em;
-        }
-
-        .skill-bar {
-            margin-bottom: 25px;
-        }
-
-        .skill-name {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1e293b;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .skill-progress {
-            width: 100%;
-            height: 8px;
-            background: #e2e8f0;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .skill-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
-            border-radius: 4px;
-            transition: width 2s ease;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-tile {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            font-weight: 500;
-            color: #1e293b;
-            transition: all 0.3s ease;
-        }
-
-        .skill-tile:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-
-        .tools-section {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            margin-top: 30px;
-        }
-
-        .tools-section h3 {
-            color: #1e293b;
-            margin-bottom: 20px;
-            font-size: 1.3em;
-        }
-
-        .tools-category {
-            margin-bottom: 20px;
-        }
-
-        .tools-category strong {
-            color: #3b82f6;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .show-more-btn {
-            background: transparent;
-            color: #3b82f6;
-            padding: 12px 30px;
-            border: 2px solid #3b82f6;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            margin: 30px auto;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .show-more-btn:hover {
-            background: #3b82f6;
-            color: white;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-100%);
-            }
-
-            .sidebar.mobile-visible {
-                transform: translateX(0);
-            }
-
-            .mobile-header {
-                display: flex;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 80px 20px 40px;
-            }
-
-            .hero-title {
-                font-size: 2em;
-            }
-
-            .section-title {
-                font-size: 2em;
-            }
-
-            .skills-section {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .experience-item {
-                margin-left: 0;
-            }
-
-            .experience-timeline::before {
-                display: none;
-            }
-
-            .experience-item::before {
-                display: none;
-            }
-        }
-    </style>
+    <title>Yogeeta Sharma | Content Writer, Editor & SEO Specialist</title>
+    <meta name="description" content="Yogeeta Sharma - Creative Content Writer, Editor, and PhD Researcher specializing in SEO-optimized content, digital marketing, and discourse analysis.">
+    <link rel="stylesheet" href="src/yogeeta-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="mobile-header">
-        <h3>Yogeeta Sharma</h3>
-        <button class="mobile-toggle" onclick="toggleSidebar()">☰</button>
-    </div>
-
-    <div class="sidebar" id="sidebar">
-        <div class="profile-section">
-            <div class="profile-photo">YS</div>
-            <div class="profile-name">Yogeeta Sharma</div>
-            <div class="profile-title">Ph.D. Scholar & Content Writer</div>
-            <div class="contact-info">
-                <div>📧 <a href="mailto:sharmayogeeta07@gmail.com">sharmayogeeta07@gmail.com</a></div>
-                <div>📱 <a href="tel:+447519686177">07519686177</a></div>
-                <div>📍 Brighton, UK</div>
-                <div>💼 <a href="https://linkedin.com/in/yogeetasharma/">LinkedIn</a></div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo" style="display: flex; align-items: center; gap: 1px;">
+				Yogeeta Sharma <img src="src/quill.png" alt="Writer" style="height: 50px;">
+			</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#articles" class="nav-link">Articles</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-        
-        <nav class="nav-menu">
-            <button class="nav-item active" onclick="showSection('home')">Home</button>
-            <button class="nav-item" onclick="showSection('experience')">Experience</button>
-            <button class="nav-item" onclick="showSection('education')">Education</button>
-            <button class="nav-item" onclick="showSection('articles')">Articles</button>
-            <button class="nav-item" onclick="showSection('publications')">Publications</button>
-            <button class="nav-item" onclick="showSection('about')">About</button>
-        </nav>
-    </div>
+    </nav>
 
-    <div class="main-content">
-        <div id="home" class="section active">
-            <div class="hero-section">
-                <h1 class="hero-title">Yogeeta Sharma</h1>
-                <p class="hero-subtitle">Creative and meticulous Content Writer, Editor, and Copyeditor with over 4 years of diverse experience in digital content creation, editorial review, and SEO-driven writing.</p>
-                <div class="cta-buttons">
-                    <a href="Yogeeta Sharma CV-1.pdf" class="btn-primary">Download CV</a>
-                    <a href="#" class="btn-secondary">View Portfolio</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Crafting Stories</span>
+                    <span class="title-line">That Convert</span>
+                </h1>
+                <p class="hero-subtitle">Content Writer | SEO Specialist | Academic Researcher</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="300">0</span>
+                        <span class="stat-label">SEO Articles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Academic Papers</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="18">0</span>
+                        <span class="stat-label">Website Copies</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#articles" class="btn btn-secondary">View My Work</a>
+					<a href="pdfs/Yogeeta_Sharma_CV_Sep_2025.pdf" download class="btn btn-secondary">
+						<i class="fas fa-download"></i> Download CV
+					</a>
                 </div>
             </div>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">250+</div>
-                    <div class="stat-label">Articles Written</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">17</div>
-                    <div class="stat-label">Website Copies</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">11</div>
-                    <div class="stat-label">Edited Contents</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">4+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5</div>
-                    <div class="stat-label">Research Publications</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">SEO Optimized</div>
+            <div class="hero-image">
+                <!-- Photo placeholder -->
+                <div class="profile-image-container">
+                    <img src="src/profile.jpeg" alt="Yogeeta Sharma" class="profile-image">
+                    <div class="image-overlay"></div>
                 </div>
             </div>
         </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-        <div id="experience" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Professional Experience</h2>
-                <p class="section-subtitle">A timeline of my professional journey in content writing and digital marketing</p>
-            </div>
-            
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <h3 class="job-title">Content Writer</h3>
-                    <div class="company">Stickyeyes United Kingdom</div>
-                    <div class="date">April 2023 – Present</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Write SEO-optimized, audience-targeted content across diverse niches including iGaming, lifestyle, automotive, tech, and sports</li>
-                            <li>Incorporate keyword research and SERP analysis to improve article ranking</li>
-                            <li>Produce conversion-focused ad content aligned with brand voice and digital marketing goals</li>
-                            <li>Perform thorough fact-checking, apply brand style guides, and ensure content clarity and coherence</li>
-                            <li>Manage quick turnaround deliverables while maintaining tone consistency and editorial accuracy</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="job-title">Adjunct Instructor</h3>
-                    <div class="company">University of the People (Remote)</div>
-                    <div class="date">June 2024 – Present</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Teach English Composition to undergraduates, emphasizing academic writing and research skills</li>
-                            <li>Provide editorial guidance to students, supporting their content development skills</li>
-                            <li>Deliver personalized feedback and maintain high engagement in virtual classrooms</li>
-                            <li>Design assessments aligned with learning objectives and institutional standards</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="job-title">Customer Service Assistant</h3>
-                    <div class="company">Ontrak Recruitment and Training, Brighton, UK</div>
-                    <div class="date">August 2023 – Present</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Deliver excellent customer support by resolving inquiries and guiding commuters through real-time updates</li>
-                            <li>Use internal CRM and communication systems for issue tracking and safety protocol management</li>
-                            <li>Maintain a clean, efficient environment and provide frontline service aligned with customer experience standards</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="job-title">Legal Content Writing Analyst</h3>
-                    <div class="company">mStarlex Solutions Pvt. Ltd, Gurugram, India</div>
-                    <div class="date">July 2022 – January 2023</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Create legal content and visa-related articles using structured formats and compliance checks</li>
-                            <li>Monitor international legislation and synthesize updates into client-ready materials</li>
-                            <li>Deliver high-volume, accurate copy under strict deadlines</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="experience-item">
-                    <h3 class="job-title">TGT English Teacher</h3>
-                    <div class="company">Ascent International School, Greater Noida, India</div>
-                    <div class="date">July 2021 – April 2022</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li>Develop and deliver curriculum-aligned lesson plans for secondary school students</li>
-                            <li>Conduct evaluations, progress reporting, and digital class coordination via Google Classroom</li>
-                        </ul>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">Creative and meticulous Content Writer, Editor, and Copyeditor with over 5 years of diverse experience in digital content creation, editorial review, and SEO-driven writing.</p>
+                    <p>I specialize in producing, refining, and managing high-quality content across multiple industries, including iGaming, lifestyle, technology, and legal domains. Currently pursuing my Ph.D. in English at Galgotias University, my research focuses on power dynamics in interview discourse and gendered communication.</p>
+                    <p>As a Content Writer at Stickyeyes and Adjunct Instructor at University of the People, I combine practical industry experience with academic rigor to deliver content that educates, engages, and converts.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-award"></i>
+                            <span>National/Regional Medalist in Yoga & Athletics</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Ph.D. Candidate in English Literature</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Full UK Working Rights</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div id="education" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">Academic foundation in English literature and linguistics</p>
-            </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
             
-            <div class="education-grid">
-                <div class="education-item">
-                    <h3 class="degree">Ph.D. in English</h3>
-                    <div class="institution">Galgotias University, Greater Noida, India</div>
-                    <div class="date">August 2021 – Present</div>
-                    <p><strong>Thesis Title:</strong> Power Dynamics in Interview Discourse and Gendered Communication</p>
+            <div class="skills-grid">
+                <!-- Content & Writing -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-pen-fancy"></i> Content & Writing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Content Writing</span>
+                        <span class="skill-tag">Copywriting</span>
+                        <span class="skill-tag">Content Editing</span>
+                        <span class="skill-tag">Proofreading</span>
+                        <span class="skill-tag">Copy Editing</span>
+                        <span class="skill-tag">Brand Voice Adaptation</span>
+                        <span class="skill-tag">Content Strategy</span>
+                        <span class="skill-tag">Editorial Review</span>
+                        <span class="skill-tag">Quality Assurance</span>
+                        <span class="skill-tag">Fact-Checking</span>
+                    </div>
                 </div>
 
-                <div class="education-item">
-                    <h3 class="degree">Masters in English</h3>
-                    <div class="institution">IGNOU, Delhi, India</div>
-                    <div class="date">June 2016 – May 2018</div>
+                <!-- SEO & Digital Marketing -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-search"></i> SEO & Digital Marketing</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">SEO Optimization</span>
+                        <span class="skill-tag">Keyword Research</span>
+                        <span class="skill-tag">On-Page SEO</span>
+                        <span class="skill-tag">Technical SEO</span>
+                        <span class="skill-tag">SERP Analysis</span>
+                        <span class="skill-tag">Link Building</span>
+                        <span class="skill-tag">Domain Authority</span>
+                        <span class="skill-tag">Backlink Analysis</span>
+                        <span class="skill-tag">Content Marketing</span>
+                        <span class="skill-tag">Conversion Optimization</span>
+                    </div>
                 </div>
 
-                <div class="education-item">
-                    <h3 class="degree">Bachelors in English</h3>
-                    <div class="institution">IGNOU, Delhi, India</div>
-                    <div class="date">August 2013 – June 2016</div>
+                <!-- Research & Analysis -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-chart-line"></i> Research & Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Academic Research</span>
+                        <span class="skill-tag">Discourse Analysis</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Market Research</span>
+                        <span class="skill-tag">Competitor Analysis</span>
+                        <span class="skill-tag">Content Audits</span>
+                        <span class="skill-tag">Performance Metrics</span>
+                        <span class="skill-tag">Analytical Writing</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="tool-logos">
+                        <div class="tool-item">
+                            <img src="https://cdn.worldvectorlogo.com/logos/google-g-2015.svg" alt="Google">
+                            <span>Google Tools</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/60169/assets/601039/large-76a270657e9a0d62548da88a48ae0042.png" alt="SEMRush">
+                            <span>SEMRush</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="https://ahrefs.com/assets/esbuild/primary-light-H2PY2LGX.png" alt="Ahrefs">
+                            <span>Ahrefs</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="https://cdn.worldvectorlogo.com/logos/wordpress-icon-1.svg" alt="WordPress">
+                            <span>WordPress</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="https://cdn.worldvectorlogo.com/logos/microsoft-office-2013.svg" alt="MS Office">
+                            <span>MS Office</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="https://cdn.worldvectorlogo.com/logos/logo-google-workspace.svg" alt="Google Workspace">
+                            <span>Google Workspace</span>
+                        </div>
+                        <div class="tool-item">
+                            <img src="https://cdn.worldvectorlogo.com/logos/grammarly-1.svg" alt="Grammarly">
+                            <span>Grammarly</span>
+                        </div>
+                        <div class="tool-item">
+                            <i class="fas fa-code" style="font-size: 2.5rem; color: #667eea;"></i>
+                            <span>CMS Platforms</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div id="articles" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Featured Articles</h2>
-                <p class="section-subtitle">A showcase of my content writing across various industries</p>
-            </div>
+    <!-- Articles Section -->
+    <section id="articles" class="articles">
+        <div class="container">
+            <h2 class="section-title">Published Articles</h2>
+            <p class="section-subtitle">Explore 300+ SEO-optimized articles across diverse niches</p>
             
-            <div class="articles-grid">
-                <div class="article-card">
-                    <div class="article-header">
-                        <div class="article-category">SEO</div>
-                        <h3 class="article-title">Advanced Keyword Research Techniques</h3>
-                    </div>
-                    <div class="article-content">
-                        <p class="article-description">Deep dive into modern SEO strategies, SERP analysis methods, and competitive keyword research.</p>
-                        <a href="#" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                
-                <div class="article-card">
-                    <div class="article-header">
-                        <div class="article-category">Automotive</div>
-                        <h3 class="article-title">Electric Vehicles: Market Analysis</h3>
-                    </div>
-                    <div class="article-content">
-                        <p class="article-description">Comprehensive overview of EV market trends, consumer behavior patterns, and industry forecasts.</p>
-                        <a href="#" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                
-                <div class="article-card">
-                    <div class="article-header">
-                        <div class="article-category">Sports</div>
-                        <h3 class="article-title">Sports Marketing in Digital Era</h3>
-                    </div>
-                    <div class="article-content">
-                        <p class="article-description">Analysis of modern sports marketing strategies and fan engagement techniques across digital platforms.</p>
-                        <a href="#" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                
-                <div class="article-card hidden" id="more-articles">
-                    <div class="article-header">
-                        <div class="article-category">Legal</div>
-                        <h3 class="article-title">Visa Documentation Guide</h3>
-                    </div>
-                    <div class="article-content">
-                        <p class="article-description">Complete guide to international visa requirements and documentation processes for various countries.</p>
-                        <a href="#" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-                
-                <div class="article-card hidden">
-                    <div class="article-header">
-                        <div class="article-category">Education</div>
-                        <h3 class="article-title">Online Learning Best Practices</h3>
-                    </div>
-                    <div class="article-content">
-                        <p class="article-description">Effective strategies for virtual classroom engagement and student success in digital learning environments.</p>
-                        <a href="#" class="article-link">Read Article →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="show-more-btn" onclick="showMoreArticles()">Show More Articles</button>
-        </div>
-
-        <div id="publications" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Research Publications</h2>
-                <p class="section-subtitle">Academic contributions to linguistics and discourse analysis</p>
-            </div>
-            
-            <div class="publication-item">
-                <h3 class="publication-title">Decoding Dominance: Power Structures in Media Narratives</h3>
-                <div class="journal">ESP International Journal of Science, Humanities and Management Studies</div>
-                <div class="abstract">
-                    <strong>Abstract:</strong> This research examines the intricate power structures embedded within contemporary media narratives and their profound societal implications. Through comprehensive discourse analysis, the study reveals how media representations shape public perception and reinforce existing power hierarchies. The analysis encompasses various media formats including news reporting, social media discourse, and entertainment content, demonstrating how linguistic choices and narrative framing contribute to the perpetuation of dominance patterns in society.
-                </div>
-                <div class="publication-links">
-                    <a href="#" class="pub-link">Read Full Paper</a>
-                    <a href="#" class="pub-link">Download PDF</a>
-                </div>
+            <!-- Filter Tags -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Articles</button>
+                <button class="filter-btn" data-filter="gaming">Gaming & Entertainment</button>
+                <button class="filter-btn" data-filter="technology">Technology</button>
+                <button class="filter-btn" data-filter="sports">Sports</button>
+                <button class="filter-btn" data-filter="fashion">Fashion & Lifestyle</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="automotive">Automotive</button>
+                <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
             </div>
 
-            <div class="publication-item">
-                <h3 class="publication-title">Spoken Discourse Analysis for Feminist Interviews</h3>
-                <div class="journal">Specialusis Ugdymas</div>
-                <div class="abstract">
-                    <strong>Abstract:</strong> This comprehensive study explores the linguistic patterns and communicative strategies employed in feminist interview discourse. Through detailed analysis of conversational structures, turn-taking patterns, and rhetorical strategies, the research identifies key linguistic markers that characterize feminist discourse. The study contributes to understanding how language functions as a tool for social change and empowerment within feminist movements, offering insights into the relationship between linguistic choices and ideological positioning.
-                </div>
-                <div class="publication-links">
-                    <a href="#" class="pub-link">Read Full Paper</a>
-                    <a href="#" class="pub-link">Download PDF</a>
-                </div>
+            <!-- Articles Grid -->
+            <div class="articles-grid" id="articlesGrid">
+                <!-- Articles will be dynamically loaded here -->
             </div>
 
-            <div class="publication-item">
-                <h3 class="publication-title">Historical Evolution of Interview Power Dynamics</h3>
-                <div class="journal">Indian Journal of Natural Sciences</div>
-                <div class="abstract">
-                    <strong>Abstract:</strong> This historical analysis traces the evolution of power structures in interview communication from traditional face-to-face interactions to contemporary digital formats. The study examines how technological advancement, social changes, and cultural shifts have influenced the distribution and manifestation of power in interview contexts. Through comparative analysis across different time periods, the research identifies patterns of change and continuity in interview power dynamics, providing insights into the sociocultural factors that shape communicative authority.
-                </div>
-                <div class="publication-links">
-                    <a href="#" class="pub-link">Read Full Paper</a>
-                    <a href="#" class="pub-link">Download PDF</a>
-                </div>
-            </div>
-
-            <div class="publication-item">
-                <h3 class="publication-title">Voices of Change: Feminist Activism and Gender Equality</h3>
-                <div class="journal">MFW 2024 Conference</div>
-                <div class="abstract">
-                    <strong>Abstract:</strong> This conference presentation explores the transformative impact of feminist activism on contemporary gender equality discourse. The research examines how activist voices have shaped public dialogue, policy formation, and social attitudes toward gender equality. Through analysis of activist communication strategies, media representation, and policy outcomes, the study demonstrates the crucial role of feminist activism in advancing gender equality initiatives and challenging systemic inequalities in various social, political, and economic contexts.
-                </div>
-                <div class="publication-links">
-                    <a href="#" class="pub-link">View Presentation</a>
-                    <a href="#" class="pub-link">Conference Proceedings</a>
-                </div>
+            <div class="articles-count">
+                <p>Showing <span id="articleCount">0</span> articles</p>
             </div>
         </div>
+    </section>
 
-        <div id="about" class="section">
-            <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Skills, expertise, and professional capabilities</p>
-            </div>
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <h2 class="section-title">Academic Publications</h2>
+            <p class="section-subtitle">Peer-reviewed research on discourse analysis, power dynamics, and gender studies</p>
             
-            <div class="skills-section">
-                <div class="skills-chart">
-                    <h3>Core Competencies</h3>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>Content Writing & SEO</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" style="width: 95%;"></div>
-                        </div>
+            <div class="publications-list">
+                <!-- Publication 1 -->
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">Stronger Together: Crafting Successful Industry–Academia Partnerships</h3>
+                        <span class="publication-journal">Springer - Lecture Notes in Networks and Systems</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>Editorial Review & Proofreading</span>
-                            <span>92%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" style="width: 92%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>Research & Analysis</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>Brand Voice Adaptation</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" style="width: 88%;"></div>
-                        </div>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-name">
-                            <span>Academic Instruction</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-progress">
-                            <div class="skill-fill" style="width: 85%;"></div>
+                    <div class="publication-body">
+                        <p class="publication-abstract">
+                            This paper explores the intricate dynamics and potential of collaborations between academic institutions and industries. Recognizing the evolving demands of the 21st-century workplace, this paper investigates how such partnerships can be mutually beneficial while addressing the challenges they often face. Utilizing a mixed methods approach, we combine empirical data, case studies, and theoretical analyses to establish benchmarks for assessing partnership effectiveness. The research highlights the importance of aligning goals, timelines, and ethical considerations to ensure long-term sustainability and equitable resource distribution.
+                        </p>
+                        <div class="publication-actions">
+                            <a href="https://link.springer.com/chapter/10.1007/978-981-96-0201-8_51" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Read Full Paper
+                            </a>
+                            <a href="#" download class="btn btn-outline" target="_blank">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="skills-chart">
-                    <h3>Technical Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-tile">Content Writing & Editing</div>
-                        <div class="skill-tile">SEO Optimization</div>
-                        <div class="skill-tile">Keyword Research</div>
-                        <div class="skill-tile">Proofreading & Editorial Review</div>
-                        <div class="skill-tile">Content Planning & Strategy</div>
-                        <div class="skill-tile">Fact-Checking & Quality Assurance</div>
-                        <div class="skill-tile">Brand Voice Adaptation</div>
-                        <div class="skill-tile">Social Media Content</div>
-                        <div class="skill-tile">Research & Analysis</div>
-                        <div class="skill-tile">Academic Instruction</div>
-                        <div class="skill-tile">Customer Communication</div>
-                        <div class="skill-tile">Time & Task Management</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="tools-section">
-                <h3>Tools & Technologies</h3>
-                <div class="tools-category">
-                    <strong>SEO & Analytics:</strong> SEMrush, Ahrefs, Google Keyword Planner, Google Analytics
+                <!-- Publication 2 -->
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">Decoding Dominance: A Discourse Analysis of Power Structures in Contemporary Media Narratives</h3>
+                        <span class="publication-journal">ESP International Journal of Science, Humanities & Management Studies</span>
+                    </div>
+                    <div class="publication-body">
+                        <p class="publication-abstract">
+                            In an era where media narratives significantly shape public perception, understanding the underlying power structures becomes paramount. This study delves into the intricate dynamics of power as represented and perpetuated through media. This research employs a meticulous discourse analysis methodology, scrutinizing various forms of media content to unravel the strategies used to construct and depict dominance. By systematically deconstructing media narratives, this study uncovers the subtle, yet potent, mechanisms through which power is manifested and maintained.
+                        </p>
+                        <div class="publication-actions">
+                            <a href="https://www.espjournals.org/IJSHMS/ijshms-v2i2p105" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Read Full Paper
+                            </a>
+                            <a href="pdfs/paper2.pdf" download class="btn btn-outline" target="_blank">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="tools-category">
-                    <strong>Content Management:</strong> WordPress, Content Management Systems
+
+                <!-- Publication 3 -->
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">Spoken Discourse Analysis for Feminist Interviews: Movement towards a Gender Equality Era?</h3>
+                        <span class="publication-journal">Specialusis Ugdymas</span>
+                    </div>
+                    <div class="publication-body">
+                        <p class="publication-abstract">
+                            According to contemporary research, discourse analysis, sometimes known as DA, is an interdisciplinary technique for studying languages outside of sentences or within lines. The goal is to eliminate prevailing discourses that inform academics on how language is used to create reality socially. This paper explores the implications of discourse in feminist interviews, helping to understand the use of specific language by stressing the cohesive schema of text evaluation to help scientists recognize meaning from various perspectives.
+                        </p>
+                        <div class="publication-actions">
+                            <a href="http://www.sumc.lt/index.php/se/article/view/1773" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Read Full Paper
+                            </a>
+                            <a href="pdfs/paper3.pdf" download class="btn btn-outline" target="_blank">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="tools-category">
-                    <strong>Writing & Editing:</strong> Grammarly, Advanced Proofreading Tools
+
+                <!-- Publication 4 -->
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">The Historical Evolution of Interview Power Dynamics: A Comparative Analysis of Literary and Political Interviews</h3>
+                        <span class="publication-journal">Indian Journal of Natural Sciences</span>
+                    </div>
+                    <div class="publication-body">
+                        <p class="publication-abstract">
+                            This study embarks on a comprehensive journey through the evolving landscape of interview power dynamics. We aim to dissect and map the progression of power relations in interviews, focusing particularly on the contrast between literary and political interviews across various historical periods. Through meticulous examination, the paper illuminates the nuances and shifts in power dynamics, drawing attention to both the similarities and disparities between literary and political contexts.
+                        </p>
+                        <div class="publication-actions">
+                            <a href="https://tnsroindia.org.in/journals.html" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Read Full Paper
+                            </a>
+                            <a href="pdfs/paper4.pdf" download class="btn btn-outline" target="_blank">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="tools-category">
-                    <strong>Productivity:</strong> MS Office Suite, Google Workspace
-                </div>
-                <div class="tools-category">
-                    <strong>Specialties:</strong> iGaming, Lifestyle, Technology, Legal, Automotive, Sports Content
+
+                <!-- Publication 5 -->
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3 class="publication-title">Voices of Change: Feminist Activism and Gender Equality</h3>
+                        <span class="publication-journal">MFW 2024 Conference</span>
+                    </div>
+                    <div class="publication-body">
+                        <p class="publication-abstract">
+                            This paper delves into the transformative role of feminist activism in redefining societal power structures and advocating for gender equality. This paper offers an interdisciplinary approach, integrating discourse analysis with empirical research to assess the impact of feminist activism on public discourse and policy. The study centres on the narratives, campaigns, and public engagements of feminist activists, drawing from diverse sources including speeches, social media, and published works.
+                        </p>
+                        <div class="publication-actions">
+                            <a href="#" class="btn btn-outline disabled-link">
+                                <i class="fas fa-external-link-alt"></i> Read Full Paper
+                            </a>
+                            <a href="pdfs/paper5.pdf" download class="btn btn-outline" target="_blank">
+                                <i class="fas fa-download"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
+    <!-- Books Section -->
+    <section id="books" class="books">
+        <div class="container">
+            <h2 class="section-title">Books</h2>
+            <div class="books-content">
+                <div class="coming-soon">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Coming Soon!</h3>
+                    <p>Exciting literary works are currently in development. Stay tuned for updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Open to freelance opportunities, collaborations, and academic partnerships</p>
             
-            // Remove active class from all nav items
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked nav item
-            event.target.classList.add('active');
-            
-            // Hide sidebar on mobile after selection
-            if (window.innerWidth <= 768) {
-                document.getElementById('sidebar').classList.remove('mobile-visible');
-            }
-        }
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:sharmayogeeta07@gmail.com">sharmayogeeta07@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+447519686177">+44 7519 686177</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Brighton, United Kingdom</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://linkedin.com/in/yogeetasharma/" target="_blank">linkedin.com/in/yogeetasharma</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <div>
+                            <h4>Portfolio</h4>
+                            <a href="https://sharmayogeeta.github.io/portfolio/" target="_blank">View Online Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('mobile-visible');
-        }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Yogeeta Sharma. All rights reserved.</p>
+                <p class="footer-note">Full UK Working Rights | No Sponsorship Required</p>
+            </div>
+        </div>
+    </footer>
 
-        function showMoreArticles() {
-            const hiddenArticles = document.querySelectorAll('.article-card.hidden');
-            const button = document.querySelector('.show-more-btn');
-            
-            if (hiddenArticles.length > 0) {
-                hiddenArticles.forEach(article => {
-                    article.classList.remove('hidden');
-                });
-                button.textContent = 'Show Less';
-            } else {
-                const allArticles = document.querySelectorAll('.article-card');
-                for (let i = 6; i < allArticles.length; i++) {
-                    allArticles[i].classList.add('hidden');
-                }
-                button.textContent = 'Show More Articles';
-            }
-        }
-
-        // Animate skill bars when About section is viewed
-        function animateSkillBars() {
-            const skillFills = document.querySelectorAll('.skill-fill');
-            skillFills.forEach(fill => {
-                const width = fill.style.width;
-                fill.style.width = '0%';
-                setTimeout(() => {
-                    fill.style.width = width;
-                }, 100);
-            });
-        }
-
-        // Add observer for skill animation
-        const aboutSection = document.getElementById('about');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateSkillBars();
-                }
-            });
-        });
-
-        if (aboutSection) {
-            observer.observe(aboutSection);
-        }
-
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            const sidebar = document.getElementById('sidebar');
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            
-            if (window.innerWidth <= 768 && 
-                !sidebar.contains(event.target) && 
-                !mobileToggle.contains(event.target)) {
-                sidebar.classList.remove('mobile-visible');
-            }
-        });
-    </script>
+    <script src="src/yogeeta-script.js"></script>
 </body>
 </html>
