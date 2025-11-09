@@ -1,0 +1,70 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background (transparent) -->
+  <rect width="400" height="120" fill="none"/>
+  
+  <!-- Decorative quill pen -->
+  <g id="quill" transform="translate(20, 30)">
+    <!-- Feather -->
+    <path d="M 5 55 Q 8 50, 10 40 Q 12 25, 15 10 Q 17 5, 20 2 Q 22 0, 24 2 Q 26 5, 28 10 Q 30 25, 32 40 Q 34 50, 37 55 L 35 56 Q 32 45, 30 30 Q 28 15, 25 8 L 21 8 Q 18 15, 16 30 Q 14 45, 11 56 Z" 
+          fill="#667eea" 
+          stroke="#667eea" 
+          stroke-width="0.5"/>
+    
+    <!-- Quill details (feather lines left side) -->
+    <path d="M 21 10 Q 15 12, 12 15" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 18 Q 16 20, 13 23" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 26 Q 17 28, 14 31" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 34 Q 18 36, 15 39" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 42 Q 18 44, 16 47" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    
+    <!-- Quill details (feather lines right side) -->
+    <path d="M 21 10 Q 27 12, 30 15" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 18 Q 26 20, 29 23" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 26 Q 25 28, 28 31" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 34 Q 24 36, 27 39" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    <path d="M 21 42 Q 24 44, 26 47" stroke="#764ba2" stroke-width="0.8" fill="none" opacity="0.6"/>
+    
+    <!-- Ink well tip -->
+    <path d="M 20 55 L 18 65 L 24 65 L 22 55 Z" fill="#2c3e50"/>
+    <circle cx="21" cy="65" r="2" fill="#2c3e50"/>
+  </g>
+  
+  <!-- Name: Yogeeta Sharma -->
+  <g id="name">
+    <!-- "Yogeeta" in elegant serif font -->
+    <text x="70" y="50" 
+          font-family="'Playfair Display', Georgia, serif" 
+          font-size="32" 
+          font-weight="700" 
+          fill="#2c3e50"
+          letter-spacing="1">
+      Yogeeta
+    </text>
+    
+    <!-- "Sharma" below with slightly smaller size -->
+    <text x="70" y="80" 
+          font-family="'Playfair Display', Georgia, serif" 
+          font-size="32" 
+          font-weight="700" 
+          fill="#2c3e50"
+          letter-spacing="1">
+      Sharma
+    </text>
+    
+    <!-- Subtitle/tagline -->
+    <text x="70" y="100" 
+          font-family="'Lato', Arial, sans-serif" 
+          font-size="12" 
+          font-weight="400" 
+          fill="#667eea"
+          letter-spacing="3">
+      CONTENT WRITER & SEO SPECIALIST
+    </text>
+  </g>
+  
+  <!-- Decorative underline accent -->
+  <line x1="70" y1="85" x2="200" y2="85" 
+        stroke="#667eea" 
+        stroke-width="2" 
+        opacity="0.3"/>
+</svg>
