@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Articles | Yogeeta Sharma</title>
+    <meta name="description" content="Published web articles by Yogeeta Sharma across gaming, sport, technology, fashion, business, automotive and cybersecurity.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Main">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">Yogeeta Sharma <img src="assets/img/quill.png" alt="" width="27" height="38"></a>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="articles.html" aria-current="page">Articles</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a class="nav-cv" href="https://sharmayogeeta.github.io/cv/">Online CV <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-hero">
+            <div class="container">
+                <p class="breadcrumb"><a href="index.html">Home</a> / <a href="work.html">Work</a> / Articles</p>
+                <h1>Web Articles</h1>
+                <p>A selection of <span data-article-count>170+</span> published pieces from more than 300 SEO articles written for sites across the UK and beyond.</p>
+            </div>
+        </header>
+
+        <section class="section" id="articles-top" style="scroll-margin-top: var(--nav-h)">
+            <div class="container">
+                <div class="toolbar">
+                    <label class="search">
+                        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                        <span class="visually-hidden" style="position:absolute;left:-9999px">Search articles</span>
+                        <input id="articleSearch" type="search" placeholder="Search by title or website…" autocomplete="off">
+                    </label>
+                    <div class="filters" role="group" aria-label="Filter by topic">
+                        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+                        <button class="filter-btn" type="button" data-filter="gaming" aria-pressed="false">Gaming &amp; Entertainment</button>
+                        <button class="filter-btn" type="button" data-filter="sports" aria-pressed="false">Sports</button>
+                        <button class="filter-btn" type="button" data-filter="technology" aria-pressed="false">Technology</button>
+                        <button class="filter-btn" type="button" data-filter="fashion" aria-pressed="false">Fashion &amp; Lifestyle</button>
+                        <button class="filter-btn" type="button" data-filter="business" aria-pressed="false">Business</button>
+                        <button class="filter-btn" type="button" data-filter="automotive" aria-pressed="false">Automotive</button>
+                        <button class="filter-btn" type="button" data-filter="cybersecurity" aria-pressed="false">Cybersecurity</button>
+                    </div>
+                </div>
+
+                <p class="result-count" id="resultCount" aria-live="polite"></p>
+                <div class="articles-grid" id="articlesGrid"></div>
+                <p class="empty" id="emptyState">No articles match that search. Try another word or topic.</p>
+                <nav class="pagination" id="pagination" aria-label="Article pages"></nav>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span data-year>2026</span> Yogeeta Sharma. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="work.html">Work</a>
+                <a href="articles.html">Articles</a>
+                <a href="publications.html">Publications</a>
+                <a href="books.html">Books</a>
+                <a href="https://sharmayogeeta.github.io/cv/">Online CV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/articles-data.js"></script>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
