@@ -1,431 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yogeeta Sharma | Content Writer, Editor & SEO Specialist</title>
-    <meta name="description" content="Yogeeta Sharma - Creative Content Writer, Editor, and PhD Researcher specializing in SEO-optimized content, digital marketing, and discourse analysis.">
-    <link rel="stylesheet" href="src/yogeeta-styles.css">
+    <title>Yogeeta Sharma | Writer, Researcher &amp; Author</title>
+    <meta name="description" content="Portfolio of Yogeeta Sharma — content writer, PhD researcher in English and author. Explore published articles, academic papers and books.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo" style="display: flex; align-items: center; gap: 1px;">
-				Yogeeta Sharma <img src="src/quill.png" alt="Writer" style="height: 50px;">
-			</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#articles" class="nav-link">Articles</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#books" class="nav-link">Books</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+    <nav class="site-nav" aria-label="Main">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">Yogeeta Sharma <img src="assets/img/quill.png" alt="" width="27" height="38"></a>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a class="nav-cv" href="https://sharmayogeeta.github.io/cv/">Online CV <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="title-line">Crafting Stories</span>
-                    <span class="title-line">That Convert</span>
-                </h1>
-                <p class="hero-subtitle">Content Writer | SEO Specialist | Academic Researcher</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="5">0</span>
-                        <span class="stat-label">Years Experience</span>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">Portfolio</p>
+                    <h1>Words that <span class="accent">inform, engage</span> and endure.</h1>
+                    <p class="lead">I'm Yogeeta Sharma — a content writer, researcher with a PhD in English, and author based in Brighton, UK. This is a home for the things I've written: web articles, academic papers and books.</p>
+                    <div class="hero-roles" aria-label="Roles">
+                        <span>Content Writer &amp; Editor</span>
+                        <span>PhD in English</span>
+                        <span>Published Author</span>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="300">0</span>
-                        <span class="stat-label">SEO Articles</span>
+                    <div class="stats">
+                        <div class="stat"><strong>300+</strong><span>Articles written</span></div>
+                        <div class="stat"><strong>6</strong><span>Academic papers</span></div>
+                        <div class="stat"><strong>2</strong><span>Books</span></div>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="5">0</span>
-                        <span class="stat-label">Academic Papers</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="18">0</span>
-                        <span class="stat-label">Website Copies</span>
+                    <div class="hero-cta">
+                        <a href="work.html" class="btn btn-primary">View My Work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="https://sharmayogeeta.github.io/cv/" class="btn btn-secondary"><i class="fas fa-id-card" aria-hidden="true"></i> Online CV</a>
                     </div>
                 </div>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#articles" class="btn btn-secondary">View My Work</a>
-					<a href="pdfs/Yogeeta_Sharma_CV.pdf" download class="btn btn-secondary">
-						<i class="fas fa-download"></i> Download CV
-					</a>
+                <div class="hero-photo">
+                    <img src="assets/img/profile.jpg" alt="Yogeeta Sharma" width="900" height="1200">
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- Photo placeholder -->
-                <div class="profile-image-container">
-                    <img src="src/profile.jpeg" alt="Yogeeta Sharma" class="profile-image">
-                    <div class="image-overlay"></div>
+        </section>
+
+        <!-- About / basic details -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">About me</p>
+                    <h2>A writer at heart, a researcher by training</h2>
+                    <div class="rule"></div>
+                </div>
+                <div class="about-text reveal">
+                    <p>I have spent more than five years writing and editing for the web — SEO-led articles across gaming, sport, technology, lifestyle, automotive and legal topics — alongside teaching English and academic writing.</p>
+                    <p>My doctoral research looks at power and gender in interview discourse, and I've published six papers in the field. More recently I've turned to books inspired by the Mahabharata and the Bhagavad Gita, for adults and for children.</p>
+                </div>
+                <div class="facts reveal" style="margin-top:40px">
+                    <div class="fact"><i class="fas fa-location-dot" aria-hidden="true"></i><div><h3>Based in</h3><p>Brighton, United Kingdom</p></div></div>
+                    <div class="fact"><i class="fas fa-graduation-cap" aria-hidden="true"></i><div><h3>Education</h3><p>PhD in English, Galgotias University</p></div></div>
+                    <div class="fact"><i class="fas fa-pen-nib" aria-hidden="true"></i><div><h3>Writes about</h3><p>Discourse, gender, media &amp; mythology</p></div></div>
+                    <div class="fact"><i class="fas fa-briefcase" aria-hidden="true"></i><div><h3>Work rights</h3><p>Full UK working rights</p></div></div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">Creative and meticulous Content Writer, Editor, and Copyeditor with over 5 years of diverse experience in digital content creation, editorial review, and SEO-driven writing.</p>
-                    <p>I specialize in producing, refining, and managing high-quality content across multiple industries, including iGaming, lifestyle, technology, and legal domains. Currently pursuing my Ph.D. in English at Galgotias University, my research focuses on power dynamics in interview discourse and gendered communication.</p>
-                    <p>As a Content Writer at Stickyeyes and Adjunct Instructor at University of the People, I combine practical industry experience with academic rigor to deliver content that educates, engages, and converts.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-award"></i>
-                            <span>National/Regional Medalist in Yoga & Athletics</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Ph.D. Candidate in English Literature</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Full UK Working Rights</span>
-                        </div>
-                    </div>
+        <!-- Explore -->
+        <section class="section tint">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">Explore</p>
+                    <h2>What you'll find here</h2>
+                    <div class="rule"></div>
+                </div>
+                <div class="grid-3">
+                    <a class="card reveal" href="articles.html">
+                        <div class="card-icon"><i class="fas fa-newspaper" aria-hidden="true"></i></div>
+                        <h3>Web Articles</h3>
+                        <p>A searchable library of SEO articles published across dozens of websites.</p>
+                        <span class="card-link">Browse articles <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a class="card reveal" href="publications.html">
+                        <div class="card-icon"><i class="fas fa-book-open-reader" aria-hidden="true"></i></div>
+                        <h3>Academic Publications</h3>
+                        <p>Peer-reviewed research on discourse analysis, power dynamics and gender.</p>
+                        <span class="card-link">Read the papers <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
+                    <a class="card reveal" href="books.html">
+                        <div class="card-icon"><i class="fas fa-book" aria-hidden="true"></i></div>
+                        <h3>Books</h3>
+                        <p><em>The Battlefield Within</em> and <em>Arjun &amp; The Magic Chariot</em>, available on Amazon.</p>
+                        <span class="card-link">See the books <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            
-            <div class="skills-grid">
-                <!-- Content & Writing -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-pen-fancy"></i> Content & Writing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Content Writing</span>
-                        <span class="skill-tag">Copywriting</span>
-                        <span class="skill-tag">Content Editing</span>
-                        <span class="skill-tag">Proofreading</span>
-                        <span class="skill-tag">Copy Editing</span>
-                        <span class="skill-tag">Brand Voice Adaptation</span>
-                        <span class="skill-tag">Content Strategy</span>
-                        <span class="skill-tag">Editorial Review</span>
-                        <span class="skill-tag">Quality Assurance</span>
-                        <span class="skill-tag">Fact-Checking</span>
-                    </div>
+        <!-- Contact -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-head">
+                    <p class="eyebrow">Contact</p>
+                    <h2>Let's connect</h2>
+                    <div class="rule"></div>
+                    <p style="margin-top:14px">Open to writing commissions, collaborations and academic partnerships.</p>
                 </div>
-
-                <!-- SEO & Digital Marketing -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-search"></i> SEO & Digital Marketing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SEO Optimization</span>
-                        <span class="skill-tag">Keyword Research</span>
-                        <span class="skill-tag">On-Page SEO</span>
-                        <span class="skill-tag">Technical SEO</span>
-                        <span class="skill-tag">SERP Analysis</span>
-                        <span class="skill-tag">Link Building</span>
-                        <span class="skill-tag">Domain Authority</span>
-                        <span class="skill-tag">Backlink Analysis</span>
-                        <span class="skill-tag">Content Marketing</span>
-                        <span class="skill-tag">Conversion Optimization</span>
-                    </div>
-                </div>
-
-                <!-- Research & Analysis -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-chart-line"></i> Research & Analysis</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Academic Research</span>
-                        <span class="skill-tag">Discourse Analysis</span>
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Market Research</span>
-                        <span class="skill-tag">Competitor Analysis</span>
-                        <span class="skill-tag">Content Audits</span>
-                        <span class="skill-tag">Performance Metrics</span>
-                        <span class="skill-tag">Analytical Writing</span>
-                    </div>
-                </div>
-
-                <!-- Tools & Platforms -->
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
-                    <div class="tool-logos">
-                        <div class="tool-item">
-                            <img src="https://cdn.worldvectorlogo.com/logos/google-g-2015.svg" alt="Google">
-                            <span>Google Tools</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/60169/assets/601039/large-76a270657e9a0d62548da88a48ae0042.png" alt="SEMRush">
-                            <span>SEMRush</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="https://ahrefs.com/assets/esbuild/primary-light-H2PY2LGX.png" alt="Ahrefs">
-                            <span>Ahrefs</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="https://cdn.worldvectorlogo.com/logos/wordpress-icon-1.svg" alt="WordPress">
-                            <span>WordPress</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="https://cdn.worldvectorlogo.com/logos/microsoft-office-2013.svg" alt="MS Office">
-                            <span>MS Office</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="https://cdn.worldvectorlogo.com/logos/logo-google-workspace.svg" alt="Google Workspace">
-                            <span>Google Workspace</span>
-                        </div>
-                        <div class="tool-item">
-                            <img src="https://cdn.worldvectorlogo.com/logos/grammarly-1.svg" alt="Grammarly">
-                            <span>Grammarly</span>
-                        </div>
-                        <div class="tool-item">
-                            <i class="fas fa-code" style="font-size: 2.5rem; color: #667eea;"></i>
-                            <span>CMS Platforms</span>
-                        </div>
-                    </div>
+                <div class="contact-grid reveal">
+                    <div class="contact-item"><i class="fas fa-envelope" aria-hidden="true"></i><div><h3>Email</h3><a href="mailto:sharmayogeeta07@gmail.com">sharmayogeeta07@gmail.com</a></div></div>
+                    <div class="contact-item"><i class="fab fa-linkedin-in" aria-hidden="true"></i><div><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/yogeetasharma/" target="_blank" rel="noopener">in/yogeetasharma</a></div></div>
+                    <div class="contact-item"><i class="fas fa-id-card" aria-hidden="true"></i><div><h3>Full CV</h3><a href="https://sharmayogeeta.github.io/cv/">View online CV</a></div></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Articles Section -->
-    <section id="articles" class="articles">
-        <div class="container">
-            <h2 class="section-title">Published Articles</h2>
-            <p class="section-subtitle">Explore 300+ SEO-optimized articles across diverse niches</p>
-            
-            <!-- Filter Tags -->
-            <div class="filter-container">
-                <button class="filter-btn active" data-filter="all">All Articles</button>
-                <button class="filter-btn" data-filter="gaming">Gaming & Entertainment</button>
-                <button class="filter-btn" data-filter="technology">Technology</button>
-                <button class="filter-btn" data-filter="sports">Sports</button>
-                <button class="filter-btn" data-filter="fashion">Fashion & Lifestyle</button>
-                <button class="filter-btn" data-filter="business">Business</button>
-                <button class="filter-btn" data-filter="automotive">Automotive</button>
-                <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
-            </div>
-
-            <!-- Articles Grid -->
-            <div class="articles-grid" id="articlesGrid">
-                <!-- Articles will be dynamically loaded here -->
-            </div>
-
-            <div class="articles-count">
-                <p>Showing <span id="articleCount">0</span> articles</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="publications">
-        <div class="container">
-            <h2 class="section-title">Academic Publications</h2>
-            <p class="section-subtitle">Peer-reviewed research on discourse analysis, power dynamics, and gender studies</p>
-            
-            <div class="publications-list">
-                <!-- Publication 1 -->
-                <div class="publication-card">
-                    <div class="publication-header">
-                        <h3 class="publication-title">Stronger Together: Crafting Successful Industry–Academia Partnerships</h3>
-                        <span class="publication-journal">Springer - Lecture Notes in Networks and Systems</span>
-                    </div>
-                    <div class="publication-body">
-                        <p class="publication-abstract">
-                            This paper explores the intricate dynamics and potential of collaborations between academic institutions and industries. Recognizing the evolving demands of the 21st-century workplace, this paper investigates how such partnerships can be mutually beneficial while addressing the challenges they often face. Utilizing a mixed methods approach, we combine empirical data, case studies, and theoretical analyses to establish benchmarks for assessing partnership effectiveness. The research highlights the importance of aligning goals, timelines, and ethical considerations to ensure long-term sustainability and equitable resource distribution.
-                        </p>
-                        <div class="publication-actions">
-                            <a href="https://link.springer.com/chapter/10.1007/978-981-96-0201-8_51" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-external-link-alt"></i> Read Full Paper
-                            </a>
-                            <a href="#" download class="btn btn-outline" target="_blank">
-                                <i class="fas fa-download"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publication 2 -->
-                <div class="publication-card">
-                    <div class="publication-header">
-                        <h3 class="publication-title">Decoding Dominance: A Discourse Analysis of Power Structures in Contemporary Media Narratives</h3>
-                        <span class="publication-journal">ESP International Journal of Science, Humanities & Management Studies</span>
-                    </div>
-                    <div class="publication-body">
-                        <p class="publication-abstract">
-                            In an era where media narratives significantly shape public perception, understanding the underlying power structures becomes paramount. This study delves into the intricate dynamics of power as represented and perpetuated through media. This research employs a meticulous discourse analysis methodology, scrutinizing various forms of media content to unravel the strategies used to construct and depict dominance. By systematically deconstructing media narratives, this study uncovers the subtle, yet potent, mechanisms through which power is manifested and maintained.
-                        </p>
-                        <div class="publication-actions">
-                            <a href="https://www.espjournals.org/IJSHMS/ijshms-v2i2p105" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-external-link-alt"></i> Read Full Paper
-                            </a>
-                            <a href="pdfs/paper2.pdf" download class="btn btn-outline" target="_blank">
-                                <i class="fas fa-download"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publication 3 -->
-                <div class="publication-card">
-                    <div class="publication-header">
-                        <h3 class="publication-title">Spoken Discourse Analysis for Feminist Interviews: Movement towards a Gender Equality Era?</h3>
-                        <span class="publication-journal">Specialusis Ugdymas</span>
-                    </div>
-                    <div class="publication-body">
-                        <p class="publication-abstract">
-                            According to contemporary research, discourse analysis, sometimes known as DA, is an interdisciplinary technique for studying languages outside of sentences or within lines. The goal is to eliminate prevailing discourses that inform academics on how language is used to create reality socially. This paper explores the implications of discourse in feminist interviews, helping to understand the use of specific language by stressing the cohesive schema of text evaluation to help scientists recognize meaning from various perspectives.
-                        </p>
-                        <div class="publication-actions">
-                            <a href="http://www.sumc.lt/index.php/se/article/view/1773" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-external-link-alt"></i> Read Full Paper
-                            </a>
-                            <a href="pdfs/paper3.pdf" download class="btn btn-outline" target="_blank">
-                                <i class="fas fa-download"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publication 4 -->
-                <div class="publication-card">
-                    <div class="publication-header">
-                        <h3 class="publication-title">The Historical Evolution of Interview Power Dynamics: A Comparative Analysis of Literary and Political Interviews</h3>
-                        <span class="publication-journal">Indian Journal of Natural Sciences</span>
-                    </div>
-                    <div class="publication-body">
-                        <p class="publication-abstract">
-                            This study embarks on a comprehensive journey through the evolving landscape of interview power dynamics. We aim to dissect and map the progression of power relations in interviews, focusing particularly on the contrast between literary and political interviews across various historical periods. Through meticulous examination, the paper illuminates the nuances and shifts in power dynamics, drawing attention to both the similarities and disparities between literary and political contexts.
-                        </p>
-                        <div class="publication-actions">
-                            <a href="https://tnsroindia.org.in/journals.html" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-external-link-alt"></i> Read Full Paper
-                            </a>
-                            <a href="pdfs/paper4.pdf" download class="btn btn-outline" target="_blank">
-                                <i class="fas fa-download"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Publication 5 -->
-                <div class="publication-card">
-                    <div class="publication-header">
-                        <h3 class="publication-title">Voices of Change: Feminist Activism and Gender Equality</h3>
-                        <span class="publication-journal">MFW 2024 Conference</span>
-                    </div>
-                    <div class="publication-body">
-                        <p class="publication-abstract">
-                            This paper delves into the transformative role of feminist activism in redefining societal power structures and advocating for gender equality. This paper offers an interdisciplinary approach, integrating discourse analysis with empirical research to assess the impact of feminist activism on public discourse and policy. The study centres on the narratives, campaigns, and public engagements of feminist activists, drawing from diverse sources including speeches, social media, and published works.
-                        </p>
-                        <div class="publication-actions">
-                            <a href="#" class="btn btn-outline disabled-link">
-                                <i class="fas fa-external-link-alt"></i> Read Full Paper
-                            </a>
-                            <a href="pdfs/paper5.pdf" download class="btn btn-outline" target="_blank">
-                                <i class="fas fa-download"></i> Download PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Books Section -->
-    <section id="books" class="books">
-        <div class="container">
-            <h2 class="section-title">Books</h2>
-            <div class="books-content">
-                <div class="coming-soon">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Coming Soon!</h3>
-                    <p>Exciting literary works are currently in development. Stay tuned for updates.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Open to freelance opportunities, collaborations, and academic partnerships</p>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:sharmayogeeta07@gmail.com">sharmayogeeta07@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <a href="tel:+447519686177">+44 7519 686177</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Brighton, United Kingdom</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h4>LinkedIn</h4>
-                            <a href="https://linkedin.com/in/yogeetasharma/" target="_blank">linkedin.com/in/yogeetasharma</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <div>
-                            <h4>Portfolio</h4>
-                            <a href="https://sharmayogeeta.github.io/portfolio/" target="_blank">View Online Portfolio</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Yogeeta Sharma. All rights reserved.</p>
-                <p class="footer-note">Full UK Working Rights | No Sponsorship Required</p>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span data-year>2026</span> Yogeeta Sharma. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="work.html">Work</a>
+                <a href="articles.html">Articles</a>
+                <a href="publications.html">Publications</a>
+                <a href="books.html">Books</a>
+                <a href="https://sharmayogeeta.github.io/cv/">Online CV</a>
             </div>
         </div>
     </footer>
 
-    <script src="src/yogeeta-script.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
-
